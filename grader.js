@@ -22,6 +22,7 @@ References:
 */
 
 var fs = require('fs');
+var http = require('http');
 var program = require('commander');
 var cheerio = require('cheerio');
 var HTMLFILE_DEFAULT = "index.html";
@@ -55,6 +56,35 @@ var checkHtmlFile = function(htmlfile, checksfile) {
     return out;
 };
 
+var checkHtmlUrl = function(url, checksfile){
+    var options = {
+        //host: "192.168.8.26",
+        //port: 8080,
+        path: url//,
+        // headers: {
+        //     Host: "192.168.8.26"
+        // }  
+    };
+
+    http.get(options, function(res){
+        res.on("data", function(buff){
+            var content = buff.toString();
+            console.log(content);
+            $ = cheerio.load(content);
+
+            var checks = loadChecks(checksfile).sort();
+            var out = {};
+            for(var ii in checks) {
+                var present = $(checks[ii]).length > 0;
+                out[checks[ii]] = present;
+            }
+            var outJson = JSON.stringify(out, null, 4);
+            console.log(outJson);
+        })
+        
+    });
+};
+
 var clone = function(fn) {
     // Workaround for commander.js issue.
     // http://stackoverflow.com/a/6772648
@@ -64,11 +94,16 @@ var clone = function(fn) {
 if(require.main == module) {
     program
         .option('-c, --checks <check_file>', 'Path to checks.json', clone(assertFileExists), CHECKSFILE_DEFAULT)
-        .option('-f, --file <html_file>', 'Path to index.html', clone(assertFileExists), HTMLFILE_DEFAULT)
+        .option('-f, --file <html_file>', 'Path to index.html', clone(assertFileExists), "")
+        .option('-u, --url <url>', 'Url to page', "")
         .parse(process.argv);
-    var checkJson = checkHtmlFile(program.file, program.checks);
-    var outJson = JSON.stringify(checkJson, null, 4);
-    console.log(outJson);
+    if(program.file)    {
+        var checkJson = checkHtmlFile(program.file, program.checks);
+        var outJson = JSON.stringify(checkJson, null, 4);
+        console.log(outJson);
+    }else if(program.url){
+        checkHtmlUrl(program.url, program.checks);
+    }
 } else {
     exports.checkHtmlFile = checkHtmlFile;
 }

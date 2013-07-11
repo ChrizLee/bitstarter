@@ -1,0 +1,142 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'install', 'commander', '-g' ]
+2 info using npm@1.2.32
+3 info using node@v0.10.12
+4 verbose node symlink /usr/bin/node
+5 verbose read json /usr/lib/package.json
+6 verbose read json /usr/lib/package.json
+7 verbose cache add [ 'commander', null ]
+8 verbose cache add name=undefined spec="commander" args=["commander",null]
+9 verbose parsed url { protocol: null,
+9 verbose parsed url   slashes: null,
+9 verbose parsed url   auth: null,
+9 verbose parsed url   host: null,
+9 verbose parsed url   port: null,
+9 verbose parsed url   hostname: null,
+9 verbose parsed url   hash: null,
+9 verbose parsed url   search: null,
+9 verbose parsed url   query: null,
+9 verbose parsed url   pathname: 'commander',
+9 verbose parsed url   path: 'commander',
+9 verbose parsed url   href: 'commander' }
+10 silly lockFile bb8e5f5d-commander commander
+11 verbose lock commander /home/ubuntu/.npm/bb8e5f5d-commander.lock
+12 silly lockFile bb8e5f5d-commander commander
+13 silly lockFile bb8e5f5d-commander commander
+14 verbose addNamed [ 'commander', '' ]
+15 verbose addNamed [ null, '' ]
+16 silly lockFile e5c00f5a-commander commander@
+17 verbose lock commander@ /home/ubuntu/.npm/e5c00f5a-commander.lock
+18 silly addNameRange { name: 'commander', range: '', hasData: false }
+19 verbose url raw commander
+20 verbose url resolving [ 'https://registry.npmjs.org/', './commander' ]
+21 verbose url resolved https://registry.npmjs.org/commander
+22 info trying registry request attempt 1 at 06:06:34
+23 verbose etag "9GMUT0S7VE02GNT03TEKBH36R"
+24 http GET https://registry.npmjs.org/commander
+25 http 304 https://registry.npmjs.org/commander
+26 silly registry.get cb [ 304,
+26 silly registry.get   { server: 'CouchDB/1.3.0 (Erlang OTP/R15B03)',
+26 silly registry.get     etag: '"9GMUT0S7VE02GNT03TEKBH36R"',
+26 silly registry.get     date: 'Thu, 11 Jul 2013 06:06:31 GMT',
+26 silly registry.get     'content-length': '0' } ]
+27 verbose etag commander from cache
+28 silly addNameRange number 2 { name: 'commander', range: '', hasData: true }
+29 silly addNameRange versions [ 'commander',
+29 silly addNameRange   [ '0.0.1',
+29 silly addNameRange     '0.0.3',
+29 silly addNameRange     '0.0.4',
+29 silly addNameRange     '0.0.5',
+29 silly addNameRange     '0.1.0',
+29 silly addNameRange     '0.2.0',
+29 silly addNameRange     '0.2.1',
+29 silly addNameRange     '0.3.0',
+29 silly addNameRange     '0.3.1',
+29 silly addNameRange     '0.3.2',
+29 silly addNameRange     '0.3.3',
+29 silly addNameRange     '0.4.0',
+29 silly addNameRange     '0.4.1',
+29 silly addNameRange     '0.4.2',
+29 silly addNameRange     '0.4.3',
+29 silly addNameRange     '0.5.0',
+29 silly addNameRange     '0.5.1',
+29 silly addNameRange     '0.6.0',
+29 silly addNameRange     '0.6.1',
+29 silly addNameRange     '0.5.2',
+29 silly addNameRange     '1.0.0',
+29 silly addNameRange     '1.0.1',
+29 silly addNameRange     '1.0.2',
+29 silly addNameRange     '1.0.3',
+29 silly addNameRange     '1.0.4',
+29 silly addNameRange     '1.0.5',
+29 silly addNameRange     '1.1.0',
+29 silly addNameRange     '1.1.1',
+29 silly addNameRange     '1.2.0',
+29 silly addNameRange     '1.3.0' ] ]
+30 verbose addNamed [ 'commander', '1.3.0' ]
+31 verbose addNamed [ '1.3.0', '1.3.0' ]
+32 silly lockFile 600e18fa-commander-1-3-0 commander@1.3.0
+33 verbose lock commander@1.3.0 /home/ubuntu/.npm/600e18fa-commander-1-3-0.lock
+34 verbose read json /home/ubuntu/.npm/commander/1.3.0/package/package.json
+35 silly lockFile 600e18fa-commander-1-3-0 commander@1.3.0
+36 silly lockFile 600e18fa-commander-1-3-0 commander@1.3.0
+37 silly lockFile e5c00f5a-commander commander@
+38 silly lockFile e5c00f5a-commander commander@
+39 silly resolved [ { name: 'commander',
+39 silly resolved     version: '1.3.0',
+39 silly resolved     description: 'the complete solution for node.js command-line programs',
+39 silly resolved     keywords: [ 'command', 'option', 'parser', 'prompt', 'stdin' ],
+39 silly resolved     author: { name: 'TJ Holowaychuk', email: 'tj@vision-media.ca' },
+39 silly resolved     repository:
+39 silly resolved      { type: 'git',
+39 silly resolved        url: 'https://github.com/visionmedia/commander.js.git' },
+39 silly resolved     dependencies: { keypress: '0.1.x' },
+39 silly resolved     devDependencies: { should: '>= 0.0.1' },
+39 silly resolved     scripts: { test: 'make test' },
+39 silly resolved     main: 'index',
+39 silly resolved     engines: { node: '>= 0.6.x' },
+39 silly resolved     readme: '# Commander.js\n\n  The complete solution for [node.js](http://nodejs.org) command-line interfaces, inspired by Ruby\'s [commander](https://github.com/visionmedia/commander).\n\n [![Build Status](https://secure.travis-ci.org/visionmedia/commander.js.png)](http://travis-ci.org/visionmedia/commander.js)\n\n## Installation\n\n    $ npm install commander\n\n## Option parsing\n\n Options with commander are defined with the `.option()` method, also serving as documentation for the options. The example below parses args and options from `process.argv`, leaving remaining args as the `program.args` array which were not consumed by options.\n\n```js\n#!/usr/bin/env node\n\n/**\n * Module dependencies.\n */\n\nvar program = require(\'commander\');\n\nprogram\n  .version(\'0.0.1\')\n  .option(\'-p, --peppers\', \'Add peppers\')\n  .option(\'-P, --pineapple\', \'Add pineapple\')\n  .option(\'-b, --bbq\', \'Add bbq sauce\')\n  .option(\'-c, --cheese [type]\', \'Add the specified type of cheese [marble]\', \'marble\')\n  .parse(process.argv);\n\nconsole.log(\'you ordered a pizza with:\');\nif (program.peppers) console.log(\'  - peppers\');\nif (program.pineapple) console.log(\'  - pineapple\');\nif (program.bbq) console.log(\'  - bbq\');\nconsole.log(\'  - %s cheese\', program.cheese);\n```\n\n Short flags may be passed as a single arg, for example `-abc` is equivalent to `-a -b -c`. Multi-word options such as "--template-engine" are camel-cased, becoming `program.templateEngine` etc.\n\n## Automated --help\n\n The help information is auto-generated based on the information commander already knows about your program, so the following `--help` info is for free:\n\n```  \n $ ./examples/pizza --help\n\n   Usage: pizza [options]\n\n   Options:\n\n     -V, --version        output the version number\n     -p, --peppers        Add peppers\n     -P, --pineapple      Add pineapple\n     -b, --bbq            Add bbq sauce\n     -c, --cheese <type>  Add the specified type of cheese [marble]\n     -h, --help           output usage information\n\n```\n\n## Coercion\n\n```js\nfunction range(val) {\n  return val.split(\'..\').map(Number);\n}\n\nfunction list(val) {\n  return val.split(\',\');\n}\n\nprogram\n  .version(\'0.0.1\')\n  .usage(\'[options] <file ...>\')\n  .option(\'-i, --integer <n>\', \'An integer argument\', parseInt)\n  .option(\'-f, --float <n>\', \'A float argument\', parseFloat)\n  .option(\'-r, --range <a>..<b>\', \'A range\', range)\n  .option(\'-l, --list <items>\', \'A list\', list)\n  .option(\'-o, --optional [value]\', \'An optional value\')\n  .parse(process.argv);\n\nconsole.log(\' int: %j\', program.integer);\nconsole.log(\' float: %j\', program.float);\nconsole.log(\' optional: %j\', program.optional);\nprogram.range = program.range || [];\nconsole.log(\' range: %j..%j\', program.range[0], program.range[1]);\nconsole.log(\' list: %j\', program.list);\nconsole.log(\' args: %j\', program.args);\n```\n\n## Custom help\n\n You can display arbitrary `-h, --help` information\n by listening for "--help". Commander will automatically\n exit once you are done so that the remainder of your program\n does not execute causing undesired behaviours, for example\n in the following executable "stuff" will not output when\n `--help` is used.\n\n```js\n#!/usr/bin/env node\n\n/**\n * Module dependencies.\n */\n\nvar program = require(\'../\');\n\nfunction list(val) {\n  return val.split(\',\').map(Number);\n}\n\nprogram\n  .version(\'0.0.1\')\n  .option(\'-f, --foo\', \'enable some foo\')\n  .option(\'-b, --bar\', \'enable some bar\')\n  .option(\'-B, --baz\', \'enable some baz\');\n\n// must be before .parse() since\n// node\'s emit() is immediate\n\nprogram.on(\'--help\', function(){\n  console.log(\'  Examples:\');\n  console.log(\'\');\n  console.log(\'    $ custom-help --help\');\n  console.log(\'    $ custom-help -h\');\n  console.log(\'\');\n});\n\nprogram.parse(process.argv);\n\nconsole.log(\'stuff\');\n```\n\nyielding the following help output:\n\n```\n\nUsage: custom-help [options]\n\nOptions:\n\n  -h, --help     output usage information\n  -V, --version  output the version number\n  -f, --foo      enable some foo\n  -b, --bar      enable some bar\n  -B, --baz      enable some baz\n\nExamples:\n\n  $ custom-help --help\n  $ custom-help -h\n\n```\n\n## .prompt(msg, fn)\n\n Single-line prompt:\n\n```js\nprogram.prompt(\'name: \', function(name){\n  console.log(\'hi %s\', name);\n});\n```\n\n Multi-line prompt:\n\n```js\nprogram.prompt(\'description:\', function(name){\n  console.log(\'hi %s\', name);\n});\n```\n\n Coercion:\n\n```js\nprogram.prompt(\'Age: \', Number, function(age){\n  console.log(\'age: %j\', age);\n});\n```\n\n```js\nprogram.prompt(\'Birthdate: \', Date, function(date){\n  console.log(\'date: %s\', date);\n});\n```\n\n```js\nprogram.prompt(\'Email: \', /^.+@.+\\..+$/, function(email){\n  console.log(\'email: %j\', email);\n});\n```\n\n## .password(msg[, mask], fn)\n\nPrompt for password without echoing:\n\n```js\nprogram.password(\'Password: \', function(pass){\n  console.log(\'got "%s"\', pass);\n  process.stdin.destroy();\n});\n```\n\nPrompt for password with mask char "*":\n\n```js\nprogram.password(\'Password: \', \'*\', function(pass){\n  console.log(\'got "%s"\', pass);\n  process.stdin.destroy();\n});\n```\n\n## .confirm(msg, fn)\n\n Confirm with the given `msg`:\n\n```js\nprogram.confirm(\'continue? \', function(ok){\n  console.log(\' got %j\', ok);\n});\n```\n\n## .choose(list, fn)\n\n Let the user choose from a `list`:\n\n```js\nvar list = [\'tobi\', \'loki\', \'jane\', \'manny\', \'luna\'];\n\nconsole.log(\'Choose the coolest pet:\');\nprogram.choose(list, function(i){\n  console.log(\'you chose %d "%s"\', i, list[i]);\n});\n```\n\n## .outputHelp()\n\n  Output help information without exiting.\n\n## .help()\n\n  Output help information and exit immediately.\n\n## Links\n\n - [API documentation](http://visionmedia.github.com/commander.js/)\n - [ascii tables](https://github.com/LearnBoost/cli-table)\n - [progress bars](https://github.com/visionmedia/node-progress)\n - [more progress bars](https://github.com/substack/node-multimeter)\n - [examples](https://github.com/visionmedia/commander.js/tree/master/examples)\n\n## License \n\n(The MIT License)\n\nCopyright (c) 2011 TJ Holowaychuk &lt;tj@vision-media.ca&gt;\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\'Software\'), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \'AS IS\', WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n',
+39 silly resolved     readmeFilename: 'Readme.md',
+39 silly resolved     bugs: { url: 'https://github.com/visionmedia/commander.js/issues' },
+39 silly resolved     _id: 'commander@1.3.0',
+39 silly resolved     _from: 'commander@' } ]
+40 info install commander@1.3.0 into /usr/lib
+41 info installOne commander@1.3.0
+42 verbose from cache /home/ubuntu/.npm/commander/1.3.0/package/package.json
+43 info /usr/lib/node_modules/commander unbuild
+44 verbose read json /usr/lib/node_modules/commander/package.json
+45 verbose tar unpack /home/ubuntu/.npm/commander/1.3.0/package.tgz
+46 silly lockFile 18d00bfe-r-usr-lib-node-modules-commander tar:///usr/lib/node_modules/commander
+47 verbose lock tar:///usr/lib/node_modules/commander /home/ubuntu/.npm/18d00bfe-r-usr-lib-node-modules-commander.lock
+48 silly lockFile 4180b0ae--npm-commander-1-3-0-package-tgz tar:///home/ubuntu/.npm/commander/1.3.0/package.tgz
+49 verbose lock tar:///home/ubuntu/.npm/commander/1.3.0/package.tgz /home/ubuntu/.npm/4180b0ae--npm-commander-1-3-0-package-tgz.lock
+50 silly gunzTarPerm modes [ '755', '644' ]
+51 error Error: EACCES, mkdir '/usr/lib/node_modules/commander'
+51 error  { [Error: EACCES, mkdir '/usr/lib/node_modules/commander']
+51 error   errno: 3,
+51 error   code: 'EACCES',
+51 error   path: '/usr/lib/node_modules/commander',
+51 error   fstream_type: 'Directory',
+51 error   fstream_path: '/usr/lib/node_modules/commander',
+51 error   fstream_class: 'DirWriter',
+51 error   fstream_stack:
+51 error    [ '/usr/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23',
+51 error      '/usr/lib/node_modules/npm/node_modules/mkdirp/index.js:37:53',
+51 error      'Object.oncomplete (fs.js:107:15)' ] }
+52 error Please try running this command again as root/Administrator.
+53 error System Linux 3.2.0-40-virtual
+54 error command "/usr/bin/node" "/usr/bin/npm" "install" "commander" "-g"
+55 error cwd /home/ubuntu/startup/bitstarter
+56 error node -v v0.10.12
+57 error npm -v 1.2.32
+58 error path /usr/lib/node_modules/commander
+59 error fstream_path /usr/lib/node_modules/commander
+60 error fstream_type Directory
+61 error fstream_class DirWriter
+62 error code EACCES
+63 error errno 3
+64 error stack Error: EACCES, mkdir '/usr/lib/node_modules/commander'
+65 error fstream_stack /usr/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23
+65 error fstream_stack /usr/lib/node_modules/npm/node_modules/mkdirp/index.js:37:53
+65 error fstream_stack Object.oncomplete (fs.js:107:15)
+66 verbose exit [ 3, true ]
